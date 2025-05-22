@@ -20,7 +20,7 @@ A full-stack MERN app that helps you manage to-dos, generate summaries using Ope
 - **Backend**: Node.js, Express, MongoDB, Mongoose
 - **LLM Integration**: OpenAI GPT-3.5-Turbo
 - **Slack**: Incoming Webhook
-- **Hosting (Optional)**: Vercel (Frontend), Render/Supabase (Backend)
+
 
 ---
 
