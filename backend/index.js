@@ -7,19 +7,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Add after MongoDB connection
+
 const todoRoutes = require('./routes/todoRoutes');
 app.use('/api/todos', todoRoutes);
-// Add these lines AFTER other route imports
+
 const summaryRoutes = require('./routes/summaryRoutes');
 app.use('/api/summarize', summaryRoutes);
 
-// Test endpoint
+
 app.get('/', (req, res) => {
   res.send('Backend is running');
 });

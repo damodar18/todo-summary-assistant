@@ -6,7 +6,7 @@ const SummaryButton = () => {
 
   const handleSummarize = async () => {
     try {
-      // Remove unused 'res' variable
+
       await axios.post('http://localhost:5000/api/summarize');
       setMessage('✅ Summary sent to Slack!');
     } catch (err) {

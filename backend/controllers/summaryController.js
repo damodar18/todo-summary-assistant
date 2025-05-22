@@ -18,7 +18,7 @@ const sendToSlack = async (summary) => {
 
 const generateSummary = async (todos) => {
   try {
-    // Your AI logic
+
     const prompt = `Summarize these pending todos concisely:\n${todos.map(t => `- ${t.text}`).join('\n')}`;
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
@@ -27,7 +27,7 @@ const generateSummary = async (todos) => {
     return response.choices[0].message.content;  // AI-generated summary
   } catch (err) {
     console.warn("OpenAI error:", err.message);
-    // Fallback summary (for testing purposes)
+
     return `${todos.map(t => `- ${t.text}`).join('\n')}`;  // Fallback summary
   }
 };
@@ -40,10 +40,10 @@ const summarizeTodos = async (req, res) => {
       return res.status(400).json({ error: 'No pending todos!' });
     }
 
-    // Get the summary
+
     const summary = await generateSummary(pendingTodos);
 
-    // Send the summary to Slack
+
     await sendToSlack(summary); 
 
     res.json({ summary, success: true });

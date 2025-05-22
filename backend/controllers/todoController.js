@@ -1,6 +1,6 @@
 const Todo = require('../models/Todo');
 
-// Get all todos
+
 exports.getTodos = async (req, res) => {
   try {
     const todos = await Todo.find().sort({ createdAt: -1 });
@@ -10,7 +10,7 @@ exports.getTodos = async (req, res) => {
   }
 };
 
-// Add todo
+
 exports.addTodo = async (req, res) => {
   try {
     if (!req.body.text) {
@@ -29,7 +29,7 @@ exports.addTodo = async (req, res) => {
   }
 };
 
-// Delete todo
+
 exports.deleteTodo = async (req, res) => {
   try {
     const todo = await Todo.findByIdAndDelete(req.params.id);
@@ -41,7 +41,7 @@ exports.deleteTodo = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
-// Update todo
+
 exports.updateTodo = async (req, res) => {
   try {
     const { text, completed } = req.body;
