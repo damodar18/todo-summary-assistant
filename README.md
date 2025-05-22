@@ -32,26 +32,31 @@ git clone https://github.com/yourusername/todo-summary-assistant.git
 cd todo-summary-assistant
 ```
 ### 2. Install backend dependencies
+```
 npm install
-
+```
 ### 3. Install frontend dependencies
+```
 cd client
     npm install
-
+```
 ### 4. Create a .env file in the root folder
+```
 PORT=5000
     MONGODB_URI=your_mongodb_connection_string
     OPENAI_API_KEY=your_openai_key_here
     SLACK_WEBHOOK_URL=your_slack_webhook_url_here
-
+```
 ### 5. Start the backend
+```
 npm run dev
-
+```
 ### 6. Start the frontend
-cd client
+```
+    cd client
     npm run dev
     Now open: http://localhost:5173
-
+```
 
 ---
 
