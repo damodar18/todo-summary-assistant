@@ -102,9 +102,9 @@ cd client
 - Update Your .env File:
 
 - Open the .env file in your project and paste the Webhook URL like this:
-
+```
 SLACK_WEBHOOK_URL=your-slack-webhook-url-here
-
+```
 - Test the Slack Integration:
 
 - Once the webhook is set up and the .env file is updated, the app will send summaries to the specified Slack channel.
