@@ -38,7 +38,7 @@ npm install
 ### 3. Install frontend dependencies
 ```
 cd client
-    npm install
+npm install
 ```
 ### 4. Create a .env file in the root folder
 ```
