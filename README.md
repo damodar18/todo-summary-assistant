@@ -27,41 +27,35 @@ A full-stack MERN app that helps you manage to-dos, generate summaries using Ope
 ## 🔧 Setup Instructions
 
 ### 1. Clone the repo
-
-```
+``` 
 git clone https://github.com/yourusername/todo-summary-assistant.git
-cd todo-summary-assistant 
+cd todo-summary-assistant
 ```
 ### 2. Install backend dependencies
-```
-   npm install
-```
+npm install
+
 ### 3. Install frontend dependencies
-```
-    cd client
+cd client
     npm install
-```
+
 ### 4. Create a .env file in the root folder
-```
-    PORT=5000
+PORT=5000
     MONGODB_URI=your_mongodb_connection_string
     OPENAI_API_KEY=your_openai_key_here
     SLACK_WEBHOOK_URL=your_slack_webhook_url_here
- ```
+
 ### 5. Start the backend
-```
-    npm run dev
-```
+npm run dev
+
 ### 6. Start the frontend
-```
-    cd client
+cd client
     npm run dev
     Now open: http://localhost:5173
-```
+
 
 ---
 
-### 🔐 OpenAI Setup
+###  OpenAI Setup
 1. Go to: https://platform.openai.com/account/api-keys
 
 2. Create a free API key
@@ -69,13 +63,48 @@ cd todo-summary-assistant
 3. Paste it into your .env file as OPENAI_API_KEY
 
 ---
+### Requirements:
+- **OpenAI API key** with active credits for AI summarization.
+- Sign up at [OpenAI Platform](https://platform.openai.com/) to get your own API key.
+- **Note**: You must use your own OpenAI API key to run this project, as the provided one may not work due to usage limits or security reasons.
 
-### 💬 Slack Setup
-1. Go to: https://api.slack.com/apps
+---
 
-2. Create a new app → Enable "Incoming Webhooks"
+### Slack Setup
+- Go to Slack API:
 
-3. Generate a webhook URL
+- Visit Slack API.
 
-4. Paste it in .env as SLACK_WEBHOOK_URL
+- Create a New App:
 
+- Click Create New App.
+
+- Select From Scratch.
+
+- Choose an app name and your Slack workspace.
+
+- Enable Incoming Webhooks:
+
+- Under Add features and functionality, click Incoming Webhooks.
+
+- Toggle the Activate Incoming Webhooks switch to "On".
+
+- Generate Webhook URL:
+
+- Click Add New Webhook to Workspace.
+
+- Choose the Slack channel where you want to send the summary.
+
+- After selecting the channel, click Allow.
+
+- Copy the generated Webhook URL.
+
+- Update Your .env File:
+
+- Open the .env file in your project and paste the Webhook URL like this:
+
+SLACK_WEBHOOK_URL=your-slack-webhook-url-here
+
+- Test the Slack Integration:
+
+- Once the webhook is set up and the .env file is updated, the app will send summaries to the specified Slack channel.
